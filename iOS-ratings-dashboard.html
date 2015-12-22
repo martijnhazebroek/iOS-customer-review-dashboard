@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Reviews</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style/main.css">
+  <!-- <meta http-equiv="refresh" content="30"> -->
+</head>
+<body>
+
+<div id="target">
+  Loading...
+</div>
+
+
+<script id="template" type="x-tmpl-mustache">
+<div class="appHeader">
+  <img src="{{appInfo.icon.label}}" title="icon" alt="icon" class="appIcon"/>
+  <h2>{{appInfo.title}} <i class="fa fa-apple"></i> Customer Reviews</h2>
+</div>
+<table class="ratings">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th><i class="fa fa-star"></i></th>
+      <th>Title</th>
+      <th>Review <i class="fa fa-comments"></i></th>
+    </tr>
+  </thead>
+  {{#subViewModels}}
+    <tr class='{{cssClass}}'>
+      <td>{{index}}</td>
+      <td>{{rating}}</td>
+      <td>{{title}}</td>
+      <td>{{{contentHTML}}} <span class='author'>({{author}})</span></td>
+    <tr>
+  {{/subViewModels}}
+</table>
+</script>
+<script data-main="js/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.js" async></script>
+
+</body>
+</html>

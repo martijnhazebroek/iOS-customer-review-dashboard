@@ -1,0 +1,51 @@
+body {
+  font-family: arial, helvetica, clean, sans-serif;
+}
+
+.special_user {
+  background-color: #ffb347;
+}
+
+.good {
+  background-color: #bdecb6;
+}
+
+.bad {
+  background-color: #ff7878;
+}
+
+.ratings th:nth-child(-n+2) {
+  text-align: center;
+}
+
+.ratings th {
+  text-align: left;
+}
+
+.ratings .keyword {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.ratings td:nth-child(-n+2) {
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ratings .author {
+  font-style: italic;
+}
+
+.appHeader {
+  float: left;
+  width: 100%;
+}
+.appHeader .appIcon {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.appHeader span {
+  font-size: 0.6em
+}
