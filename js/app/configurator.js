@@ -31,7 +31,6 @@ define(['jquery', 'URI'], function ($, uri) {
   }
 
   function createConfig(options) {
-
     var userDefinedDefaults = options.defaults || {};
     var defaults = $.extend(userDefinedDefaults, {
       appIndex: 0,
@@ -52,7 +51,7 @@ define(['jquery', 'URI'], function ($, uri) {
       app: getApp(apps, defaults),
       language: getLanguage(defaults),
       page: getPage(defaults),
-      isGoodRatingWhenAtLeastNumberOfStars: defaults.isGoodRatingWhenAtLeastNumberOfStars || 4,
+      isGoodRatingWhenAtLeastNumberOfStars: defaults.isGoodRatingWhenAtLeastNumberOfStars,
       debug: getIsDebug(defaults)
     };
 
