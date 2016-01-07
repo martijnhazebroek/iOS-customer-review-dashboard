@@ -49,3 +49,8 @@ body {
 .appHeader span {
   font-size: 0.6em
 }
+
+.cloud #target {
+   width: 1170px;
+   height: 760px;
+}

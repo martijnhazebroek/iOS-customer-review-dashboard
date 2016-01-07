@@ -1,2 +1,4 @@
 *.prd.*
 .DS_Store
+node_modules/*
+.eslintrc.js

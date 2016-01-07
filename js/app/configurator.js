@@ -1,70 +1,79 @@
-define(['jquery', 'URI'], function ($, uri) {
-  var queryOptions = uri().query(true);
+'use strict';
 
-  function getApp(apps, defaults) {
-    if(!queryOptions || !queryOptions.app)
-      return apps[defaults.appIndex]
+define(['jquery', 'URI', 'app/config'], function($, uri, config) {
+  var queryOptions = uri().query(true),
+    configInstance = null;
+
+  function getConfig() {
+    if (!configInstance) {
+      configInstance = _mergeConfigWithDefaults(config);
+    }
+    return configInstance;
+  }
+
+  function _getApp(apps, defaults) {
+    if (!queryOptions || !queryOptions.app) {
+      return apps[0];
+    }
 
     var results = $.grep(apps, function(app, i) {
       return app.name.toUpperCase() === decodeURIComponent(queryOptions.app).toUpperCase();
     });
 
-    return results.length == 1 ? results[0] : apps[defaults.appIndex];
+    return results[0];
   }
 
-  function getLanguage(defaults) {
-    return !queryOptions || !queryOptions.lang
-      ? defaults.language
-      : queryOptions.lang;
+  function _getLanguage(app, defaults) {
+    return !queryOptions || !queryOptions.lang ? (app.language !== undefined ? app.language : defaults.language) : queryOptions.lang;
   }
 
-  function getIsDebug(defaults) {
-    return !queryOptions || !queryOptions.debug
-      ? defaults.debug
-      : console && queryOptions.debug != "false";
+  function _getIsDebug(defaults) {
+    return !queryOptions || !queryOptions.debug ? defaults.debug : console && queryOptions.debug !== 'false';
   }
 
-  function getPage(defaults) {
-    return !queryOptions || !queryOptions.page
-      ? defaults.page
-      : queryOptions.page
-  }
-
-  function createConfig(options) {
-    var userDefinedDefaults = options.defaults || {};
-    var defaults = $.extend(userDefinedDefaults, {
-      appIndex: 0,
-      page: 1,
+  function _mergeConfigWithDefaults(config) {
+    var userDefinedDefaults = config.defaults || {};
+    var defaults = $.extend(true, {
       debug: false,
-      language: 'nl',
-      keywords: [],
-      specialUsers: [],
-      isGoodRatingWhenAtLeastNumberOfStars: 4
-    });
+      language: 'en',
+      dashboard: {
+        keywords: [],
+        specialUsers: [],
+        isGoodRatingWhenAtLeastNumberOfStars: 4
+      },
+      cloud: {
+        wait: 50,
+        gridSize: 10,
+        rotateRatio: 0,
+        font: 'arial, helvetica, clean, sans-serif',
+        irrelevant: [],
+        synonyms: {},
+        palette: {
+          max: '#893A53',
+          med: '#4E5F7D',
+          low: '#D9AB73'
+        }
+      }
+    }, userDefinedDefaults);
 
-    var apps = options.apps;
-    for(i = 0; i < apps.length; i++) {
-     $.extend(true, apps[i], defaults);
+    var appConfigs = [];
+    for (var i = 0; i < config.apps.length; i++) {
+      appConfigs.push($.extend(true, {}, defaults, config.apps[i]));
     }
 
+    var app = _getApp(appConfigs, defaults);
     var config = {
-      app: getApp(apps, defaults),
-      language: getLanguage(defaults),
-      page: getPage(defaults),
+      app: app,
+      language: _getLanguage(app, defaults),
       isGoodRatingWhenAtLeastNumberOfStars: defaults.isGoodRatingWhenAtLeastNumberOfStars,
-      debug: getIsDebug(defaults)
+      debug: _getIsDebug(defaults)
     };
-
-    if(config.debug) {
-      console.log('Query options: %o', queryOptions);
-      console.log('Config: %o', config);
-    }
 
     return config;
   }
 
   return {
-    createConfig: createConfig
+    getConfig: getConfig
   };
 
 });
