@@ -47,7 +47,7 @@ define(['jquery', 'mathjs', 'app/grammar', 'app/logger'], function($, math, gram
       .then(function(data) {
           // then load all available pages.
           var maxPages = data.feed.link[3].attributes.href.match(/^.*rss\/customerreviews\/page=(\d+)/)[1];
-          for (var i = 1; i <= maxPages; i++) {
+          for (var i = 2; i <= maxPages; i++) {
             deferreds.push(
               _loadReviewSinglePage({
                 page: i,
@@ -84,6 +84,7 @@ define(['jquery', 'mathjs', 'app/grammar', 'app/logger'], function($, math, gram
       if (!feed) {
         continue;
       }
+
       $.each(feed.entry, function(i, item) {
         lines.push(item);
       });
