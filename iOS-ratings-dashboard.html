@@ -29,16 +29,18 @@
           <th>Review <i class="fa fa-comments"></i></th>
         </tr>
       </thead>
-      {{#subViewModels}}
-      <tr class='{{cssClass}}'>
-        <td>{{index}}</td>
-        <td>{{rating}}</td>
-        <td>{{title}}</td>
-        <td>{{{contentHTML}}}
-          <span class='author'>({{author}})</span>
-        </td>
-        <tr>
-          {{/subViewModels}}
+      <tbody>
+        {{#subViewModels}}
+        <tr class='{{cssClass}}'>
+          <td>{{index}}</td>
+          <td>{{rating}}</td>
+          <td>{{title}}</td>
+          <td>{{{contentHTML}}}
+            <span class='author'>({{author}})</span>
+          </td>
+        </tr>
+        {{/subViewModels}}
+      </tbody>
     </table>
   </script>
   <script data-main="js/main-dashboard" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.js" async></script>
