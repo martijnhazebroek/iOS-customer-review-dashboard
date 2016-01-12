@@ -8,15 +8,15 @@ define(['jquery', 'app/configurator', 'mustache', 'app/logger', 'app/datasource'
 
   function _getCssClassForRating(isSpecialUser, rating) {
     if (isSpecialUser) {
-      return 'special_user';
+      return 'warning';
     }
-    return rating >= config.app.dashboard.isGoodRatingWhenAtLeastNumberOfStars ? 'good' : 'bad';
+    return rating >= config.app.dashboard.isGoodRatingWhenAtLeastNumberOfStars ? 'success' : 'danger';
   }
 
   function _replaceKeywords(keywords, text) {
     var result = text;
     $.each(keywords, function(i, keyword) {
-      result = result.replace(new RegExp(keyword, 'gi'), '<span class="keyword">$&</span>');
+      result = result.replace(new RegExp(keyword, 'gi'), '<mark>$&</mark>');
     });
     return result;
   }
