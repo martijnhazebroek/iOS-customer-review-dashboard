@@ -11,6 +11,7 @@ Simple dashboard and word cloud that uses the Apple RSS feed to display customer
 1. Underline specific indicators.
 1. Give the review a (non-)positive background color when it has a minimum number of N stars.
 1. Highlight frequent/special reviewers.
+1. Search comments and sort based on stars or number.
 
 ## Features word cloud
 
