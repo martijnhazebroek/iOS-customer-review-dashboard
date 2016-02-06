@@ -30,7 +30,8 @@ define(['jquery', 'app/configurator', 'mustache', 'app/logger', 'app/datasource'
           appInfo = {
             icon: item['im:image'][0],
             name: item['im:name'].label,
-            title: item.title.label
+            title: item.title.label,
+            link: item.link.attributes.href
           };
           return;
         }
@@ -43,6 +44,7 @@ define(['jquery', 'app/configurator', 'mustache', 'app/logger', 'app/datasource'
           isSpecialUser: userIsSpecialUser,
           author: item.author.name.label,
           title: item.title.label,
+          version: item['im:version'].label,
           rating: rating,
           cssClass: _getCssClassForRating(userIsSpecialUser, rating)
         };

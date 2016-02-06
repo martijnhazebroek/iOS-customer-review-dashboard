@@ -20,13 +20,14 @@
   <script id="template" type="x-tmpl-mustache">
     <div class="app-header">
       <img src="{{appInfo.icon.label}}" title="icon" alt="icon" class="appIcon" />
-      <h2>{{appInfo.title}} <i class="fa fa-apple"></i> Customer Reviews</h2>
+      <h2>{{appInfo.title}} <i class="fa fa-apple"></i> Customer Reviews <small>(<a href="{{appInfo.link}}" title="Click to open iTunes" target="_blank">iTunes</a>)</small></h2>
     </div>
     <table class="table table-hover table-responsive" data-toggle="table" data-search="true" data-show-columns="true">
       <thead>
         <tr>
           <th data-field="index" data-sortable="true" data-switchable="false">#</th>
           <th data-field="stars" data-sortable="true"><i class="fa fa-star"></i></th>
+          <th data-field="version" data-sortable="true">Version</th>
           <th data-field="title">Title</th>
           <th data-field="review">Review <i class="fa fa-comments"></i></th>
         </tr>
@@ -36,6 +37,7 @@
         <tr class="{{cssClass}}">
           <td>{{index}}</td>
           <td>{{rating}}</td>
+          <td>{{version}}</td>
           <td>{{title}}</td>
           <td>{{{contentHTML}}}
             <span class="author">({{author}})</span>

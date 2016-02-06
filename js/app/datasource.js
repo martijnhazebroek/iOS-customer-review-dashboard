@@ -27,7 +27,8 @@ define(['jquery', 'mathjs', 'app/grammar', 'app/logger'], function($, math, gram
       config.language,
       '/rss/customerreviews/page=',
       config.page,
-      '/id=', config.appId,
+      '/id=',
+      config.appId,
       '/sortby=mostrecent/json'
     ].join(''));
   }
