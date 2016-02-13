@@ -2,24 +2,22 @@
 
 Simple dashboard and word cloud that uses the Apple RSS feed to display customer reviews.
 
+## Dashboard
+
 ![Dashboard example](img/example_dashboard.png)
-*Dashboard example*
-
-![Cloud example](img/example_cloud.png)
-*Cloud example*
-
-## Features dashboard
 
 1. Quick overview if the health of your store reviews.
 1. Config via JS and/or query string parameters.
 1. Supports multiple applications (for example to monitor competitors).
 1. Supports multiple app stores (languages).
-1. Underline specific indicators.
+1. Mark specific indicators.
 1. Give the review a (non-)positive background color when it has a minimum number of N stars.
-1. Highlight frequent/special reviewers.
+1. Highlight some reviewers by name (frequent/special reviewers).
 1. Search comments and sort based on stars or number.
 
-## Features word cloud
+## Word cloud
+
+![Word cloud example](img/example_cloud.png)
 
 1. Show the top 50 most used words in the review comments.
 1. Filter non relevant words that occur often.
@@ -78,4 +76,4 @@ Not everything is configurable via the UI (yet?). Examples of the full url's wit
 
     file:///your-local-file-sytem-dir/iOS-ratings-cloud.html?app=WWDC&lang=en
 
-Note: all query params are optional. By default the first app found in the config file will be loaded. An
+Note: all query params are optional. By default the first app found in the config file will be loaded.
