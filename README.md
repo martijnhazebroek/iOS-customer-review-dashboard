@@ -2,6 +2,8 @@
 
 Simple dashboard and word cloud that uses the Apple RSS feed to display customer reviews.
 
+![alt tag](img/example.png)
+
 ## Features dashboard
 
 1. Quick overview if the health of your store reviews.
