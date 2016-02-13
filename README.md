@@ -2,13 +2,9 @@
 
 Simple dashboard and word cloud that uses the Apple RSS feed to display customer reviews.
 
-![Dashboard example](img/example_dashboard.png)
-*Dashboard example*
-
-![Cloud example](img/example_cloud.png)
-*Cloud example*
-
 ## Features dashboard
+
+![Dashboard example](img/example_dashboard.png)
 
 1. Quick overview if the health of your store reviews.
 1. Config via JS and/or query string parameters.
@@ -20,6 +16,8 @@ Simple dashboard and word cloud that uses the Apple RSS feed to display customer
 1. Search comments and sort based on stars or number.
 
 ## Features word cloud
+
+![Cloud example](img/example_cloud.png)
 
 1. Show the top 50 most used words in the review comments.
 1. Filter non relevant words that occur often.
