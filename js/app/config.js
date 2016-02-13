@@ -18,7 +18,13 @@ define(function() {
     }, {
       id: 640199958,
       language: 'en',
-      name: 'WWDC'
+      name: 'WWDC',
+      cloud: {
+        irrelevant: ['this'],
+        synonyms: {
+          downloaden: 'installeren'
+        }
+      }
     }, {
       id: 376101648,
       name: 'Find my iPhone'

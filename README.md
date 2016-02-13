@@ -2,7 +2,11 @@
 
 Simple dashboard and word cloud that uses the Apple RSS feed to display customer reviews.
 
-![alt tag](img/example.png)
+![Dashboard example](img/example_dashboard.png)
+*Dashboard example*
+
+![Cloud example](img/example_cloud.png)
+*Cloud example*
 
 ## Features dashboard
 
