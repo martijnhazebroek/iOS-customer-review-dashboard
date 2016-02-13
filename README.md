@@ -76,4 +76,4 @@ Not everything is configurable via the UI (yet?). Examples of the full url's wit
 
     file:///your-local-file-sytem-dir/iOS-ratings-cloud.html?app=WWDC&lang=en
 
-Note: all query params are optional. By default the first app found in the config file will be loaded. An
+Note: all query params are optional. By default the first app found in the config file will be loaded.
